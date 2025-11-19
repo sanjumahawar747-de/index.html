@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Sneha!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://copilot.microsoft.com/th/id/BCO.047be29e-0feb-4953-92f4-463d2938116b.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 1em;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+    .message {
+      max-width: 600px;
+      margin: 2em auto;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1.5em;
+      border-radius: 15px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin: 2em;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+    }
+    audio {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday, Sneha (Dolly) 🎂</h1>
+  <div class="countdown" id="countdown">Loading countdown...</div>
+
+  <div class="message">
+    <p>Dear Dolly,</p>
+    <p>From the moment we met, your laughter has been my sunshine and your kindness my anchor. On your special day, I wish you endless joy, magical moments, and dreams that take flight like butterflies. You deserve the world, and I’m so lucky to call you my friend.</p>
+    <p>With love, Sanju 💖</p>
+  </div>
+
+  <div class="gallery">
+    <!-- Replace with your own image URLs -->
+    <img src="https://via.placeholder.com/200x250?text=Memory+1" alt="Memory 1"/>
+    <img src="https://via.placeholder.com/200x250?text=Memory+2" alt="Memory 2"/>
+    <img src="https://via.placeholder.com/200x250?text=Memory+3" alt="Memory 3"/>
+  </div>
+
+  <audio controls autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const birthday = new Date("2025-11-25T00:00:00");
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = birthday - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "🎉 It's Sneha's Birthday Today! 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until the magic begins!`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
